@@ -1,0 +1,99 @@
+<html>
+    <head>
+    <title>
+        Calculator
+    </title>
+  <style>
+
+    .container{
+
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .flex{
+
+        align-items: center;
+    }
+    .button{
+        margin: 2px 2px;
+        border-radius: 14px;   
+    }
+    button{
+        width: 70px; 
+        height: 70px;
+    }
+  </style>
+
+
+</head>
+    
+        <body>
+             <h1 style="text-align: center;">Simple calculator</h1>
+             <div>
+                <input type="text" class="text-aign" style="align-items: center; margin-left: 26%; margin-bottom:2%; border-radius: 6px; height: 50px; width: 300px;">
+             </div>
+             
+        <div class="container flex">
+
+            <div class="calci">
+              <button>7</button>
+              <button>8</button>
+              <button>9</button>
+              <button>*</button>
+            </div>
+
+            <div class="calci">
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button>-</button>
+              </div>
+
+
+              <div class="calci">
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>+</button>
+              </div>
+
+              <div class="calci">
+                <button>00</button>
+                <button>0</button>
+                <button >.</button>
+                <button>=</button>
+              </div>
+              <div class="calci">
+                <button>AC</button>
+                <button>DEL</button>
+                <button>%</button>
+                <button>/</button>
+              </div>
+
+
+        </div>
+        <script>
+            const btns = document.querySelectorAll("button")
+            const inp = document.querySelector('input')
+            btns.forEach(element => {
+                element.addEventListener("click",myfun)
+            });
+            function myfun(e)
+            {
+                const clicked = e.target.innerText
+                if(clicked=="="){
+                     inp.value = eval(inp.value)
+                }
+                else if(clicked=="AC"){
+                     inp.value=""
+                }
+                else if(clicked=="DEL"){
+                     inp.value=inp.value.slice(0,-1)
+                }else{
+                    inp.value += clicked
+                }
+            }
+        </script>
+        </body>   
+</html>
